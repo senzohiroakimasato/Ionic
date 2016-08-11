@@ -1,0 +1,87 @@
+<ion-view class="settings-view-advance">
+    <ion-nav-bar class=""></ion-nav-bar>
+    <ion-nav-buttons side="right">
+        <img ng-src="img/profile2.png" ui-sref="" id="navbaruserimage">
+    </ion-nav-buttons>
+    <ion-nav-title>
+        <span>Your Account</span>
+    </ion-nav-title>
+    <ion-content>
+        <div class="row top-content">
+            <div class="col" ng-controller="AdvanceCtrl">
+                <form name="signup_form" class="" novalidate ng-cloak>
+                    <div style="padding: 5%"></div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="list">
+                                <label class="item item-input">
+                                    <span class="input-label">Your Name</span>
+                                    <input type="text" name="user_email" ng-model="record.FirstName" required>
+                                </label>
+                                <div class="row">
+                                    <div class="col col-70">
+                                        <label class="item item-input">
+                                            <span class="input-label">Date of Birth</span>
+                                            <input type="text" name="user_birthday" ng-model="record.Birthday" required show-hide-input>
+                                        </label>
+                                    </div>
+                                    <div class="col">
+                                        <label class="item item-input">
+                                            <span class="input-label">Zip Code</span>
+                                            <input type="text" name="user_birthday" ng-model="record.Zipcode" required show-hide-input>
+
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <ul class="ul-unstyled" ng-if="errors">
+                                <li class="alert danger" ng-repeat="err in errors">{{err}}</li>
+                            </ul>-->
+                        </div>
+                    </div>
+                    <div class="row terms bottom-content">
+                        <div class="col text-center">
+                            <p> What type of content are you interested in seeing? </p>
+                        </div>
+                    </div>
+
+                    <div class="row" style="text-align: center">
+                        <div class="col">
+                            <input type="checkbox" name="interest" class="css-checkbox" id="checkboxH1" ng-model="record.interest" value="wellness">
+                            <label for="checkboxH1" class="css-label back1">Wellness</label>
+                        </div>
+                        <div class="col">
+                            <input type="checkbox" name="interest" class="css-checkbox" id="checkboxH2" ng-model="record.interest" value="cooking">
+                            <label for="checkboxH2" class="css-label back2">Cooking</label>
+                        </div>
+                        <div class="col">
+                            <input type="checkbox" name="interest" class="css-checkbox" id="checkboxH3" ng-model="record.interest" value="life">
+                            <label for="checkboxH3" class="css-label back3">Life Choices</label>
+                        </div>
+                    </div>
+                    <div class="row" style="text-align: center">
+                        <div class="col"></div>
+                        <div class="col">
+                            <input type="checkbox" name="checkboxH4" id="checkboxH4" class="css-checkbox">
+                            <label for="checkboxH4" class="css-label back4" ng-model="record.family">Family</label>
+                        </div>
+                        <div class="col">
+                            <input type="checkbox" name="checkboxH5" id="checkboxH5" class="css-checkbox">
+                            <label for="checkboxH5" class="css-label back5" ng-model="record.mindset">Mindset</label>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                    <div style="text-align: center">
+                        <label for="" class="border">Preferred Language</label>
+                    </div>
+                    <ul class="language">
+                        <li><a ng-model="record.language" ng-click="selectLanguage('en')" ng-class="{active:record.language=='en'}">English</a></li>
+                        <li><a ng-model="record.language" ng-click="selectLanguage('es')" ng-class="{active:record.language=='es'}">Español</a></li>
+                    </ul>
+                    <div style="margin-top: 60px"></div>
+                    <button type="submit" class="button button-block" ng-click="saveProfile(record)">Save Account</button>
+                </form>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,45 @@
+<ion-view class="walkthrough-view login-view auth-view" cache-view="false">
+    <ion-content>
+        <div class="row">
+            <div class="col">
+                <div>
+                    <div class="col text-center">
+                        <img ng-src="{{config.logoWhite}}" class="homelogo">
+                    </div>
+                </div>
+                <div>
+                    <div class="col">
+                        <form name="login_form" class="" novalidate ng-cloak>
+                            <div class="list">
+                                <label class="item item-input">
+                                    <input id="inputboxs" type="text" placeholder="Email / User Name" name="user_email" ng-model="user.email" required>
+                                </label>
+                                <label class="item item-input" show-hide-container>
+                                    <input id="inputboxs" type="password" placeholder="Password" name="user_password" ng-model="user.password" required show-hide-input>
+                                </label>
+                            </div>
+                            <button type="submit" class="login button button-block" ng-click="doLogIn(user)">Login</button>
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <div class="col text-center">
+                        <h3 class="or">or login with</h3>
+                    </div>
+                </div>
+                <div>
+                    <div class="button-bar social-login">
+
+                        <a class="facebook button button-block" ng-click="authExternalProvider('Facebook')"><i class="icon ion-social-facebook" style="width:60px"></i></a>
+                        <a class="twitter  button button-block" ng-click="authExternalProvider('Twitter')"><i class="icon ion-social-twitter" style="width:60px"></i></a>
+                        <a class="google   button button-block" ng-click="authExternalProvider('Google')"><i class="icon ion-social-googleplus" style="width:60px"></i></a>
+                    </div>
+                    <div class="col text-center">
+                        <h3 class="or">Don't have an account?</h3>
+                    </div>
+                    <button class="login   button button-block" ui-sref="auth.signup">Sign Up Now!</button>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

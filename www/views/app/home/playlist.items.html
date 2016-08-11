@@ -1,0 +1,41 @@
+<ion-view class="category-feeds-view">
+    <ion-nav-title>
+        <span>{{title}}</span>
+    </ion-nav-title>
+    <ion-content>
+        <div class="not-found" ng-if="!records.length && !loading">
+            <h4><i class="fa fa-frown-o"></i> No Videos Found</h4>
+        </div>
+        <div class="not-found" ng-if="loading">
+            <h4><i class="fa fa-circle-o-notch fa-spin"></i> Loading</h4>
+        </div>
+        <div class="video list card" ng-repeat="n in records">
+            <div class="item item-body">
+                <a ui-sref="app.home.playlist.watch({id:n.mediaid})">
+                    <img class="full-image" ng-src="{{n.image | resize:240}}" />
+                    <span class="item-duration">{{n.duration|time}}</span>
+                    <span class="item-star">
+                           <div ng-repeat="i in [1,2,3,4,5]">
+                               <i class="fa fa-star" id="star-icon"></i>
+                           </div>
+                    </span>
+                    <span class="item-starred">
+                           <div ng-repeat="i in [1,2,3]">
+                               <i class="fa fa-star" id="star-icon2"></i>
+                           </div>
+                    </span>
+                </a>
+                <div class="item-footer">
+                    <div class="row">
+                        <div class="col col-80 item-meta">
+                            <h4>{{n.title}}</h4>
+                            <p>{{n.description}}</p>
+                        </div>
+                        <div class="col col-20 item-views">{{n.views|viewer}}<br/>views
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

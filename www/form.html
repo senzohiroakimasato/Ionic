@@ -1,0 +1,127 @@
+<html>
+<head>
+    <title>Latinarrific Participant Form</title>
+    <link href="https://globelynx.vzconsole.com/Content/spa/css?v=x26n__lrYRUY_rhWEMh7TZHBQYKsjzw3zfnqwWkAg501" rel="stylesheet" />
+    <style>
+        .page-header.navbar{
+            background-color: #ca1e24;
+        }
+        .page-boxed{
+            background-color: #eee !important;
+        }
+        .page-boxed .page-container{
+            background-color: transparent;
+            border-left: 0px;
+            border-bottom: 0px;
+        }
+        .page-header.navbar .page-logo .logo-default {
+            margin-top: 1px;
+            margin-left: 30px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body class="page-content-white page-boxed page-header-fixed page-sidebar-closed" ng-app="app" ng-cloak>
+    <div class="page-header navbar navbar-fixed-top">
+        <div class="container">
+        <div class="page-header-inner ">
+                <!-- BEGIN LOGO -->
+                <div class="page-logo">
+                    <a href="/">
+                        <img src="/img/logo-160.png" alt="Latinarrific" class="logo-default" /> </a>
+                </div>
+        </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="page-container" ng-controller="AppController">
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="portlet light">
+                                <div class="portlet-title">
+                                    <div class="caption">Participant Form</div>
+                                </div>
+                                <div class="portlet-body form">
+                                    <form role="form" ng-submit="sendUser(user)">
+                                        <div class="form-body">
+                                            <div class="form-group">
+                                                <label class="control-label">First Name</label>
+                                                <input class="form-control" ng-model="user.firstname" type="text" name="FirstName"  placeholder="First Name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">Last Name</label>
+                                                <input class="form-control" ng-model="user.lastname" type="text" name="LastName"  placeholder="Last Name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">Email</label>
+                                                <input class="form-control" ng-model="user.email" type="email" name="Email" required placeholder="Email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">Telephone</label>
+                                                <input class="form-control" ng-model="user.telephone" type="text" pattern="[0-9+ -]{0,30}" name="Telephone" placeholder="Telephone" >
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">Age</label>
+                                                <select class="form-control" ng-model="user.custom.age" name="customAge">
+                                                    <option>Under 18</option>
+                                                    <option>18-21</option>
+                                                    <option>21-30</option>
+                                                    <option>31-40</option>
+                                                    <option>41-50</option>
+                                                    <option>over 50</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">Notes</label>
+                                                <textarea class="form-control" ng-model="user.custom.notes" type="text" name="customAge" placeholder="Notes"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">Profile</label>
+                                                <textarea class="form-control" ng-model="user.custom.profile" type="Text" name="customProfile" placeholder="Profile"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">Links</label>
+                                                <input class="form-control" type="Url" ng-model="user.custom.links" name="customLinks" placeholder="Links">
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="checkbox-list">
+                                                    <label><input type="checkbox" name="paid" ng-model="user.custom.paid" value="true"> Paid</label>
+                                                    <label><input type="checkbox" name="compensated" ng-model="user.custom.compensated" value="true"> Compensated</label>
+                                                    <label><input type="checkbox" name="attended" ng-model="user.custom.attended" value="true"> Attended</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="note note-success" ng-if="!sending && result.Succeeded">
+                                            <h4>Participant Added</h4>
+                                            <p>The participant user with email <strong>{{result.email}}</strong> added
+                                            </p>
+                                        </div>
+                                        <div class="note note-danger" ng-if="!sending && result.Errors.length">
+                                            <h4>Oops, unable to add participant</h4>
+                                            <p>Please fix the information and try again.</p>
+                                            <ul>
+                                                <li ng-repeat="err in result.Errors">{{err}}</li>
+                                            </ul>
+                                        </div>
+                                        <div class="form-actions">
+                                            <button type="submit" ng-if="sending" disabled class="btn btn-primary"><i class="fa fa-notch fa-spin"></i> Sending</button>
+                                            <button type="submit" ng-if="!sending" class="btn btn-primary"><i class="fa fa-save"></i> Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://globelynx.vzconsole.com/App_2/vendors/jquery-2.1.4.js"></script>
+    <script src="https://globelynx.vzconsole.com/App_2/vendors/jquery.migrate.min.js"></script>
+    <script src="https://globelynx.vzconsole.com/App_2/vendors/bootstrap.js"></script>
+    <script src="https://globelynx.vzconsole.com/App_2/vendors/angular.js"></script>
+    <script src="form.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<div id="dropzone" data-file-upload="options" class="fileupload dropzone record dz-clickable">
+    <input type="file" name="files[]" accept="video/*"><!-- directory webkitdirectory mozdirectory-->
+    <div class="dz-message">
+        <button class="button button-assertive icon-left ion-videocamera">Video</button>
+    </div>  
+</div>
+<div class="no-margin">
+    <progress ng-if="overall.progress<100 && overall.progress>=0" id="progressbarOverAll" max="100" value="{{overall.progress}}"></progress>
+</div>

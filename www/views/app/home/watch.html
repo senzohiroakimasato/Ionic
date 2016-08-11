@@ -1,0 +1,160 @@
+﻿<ion-view class="settings-view-video" cache-view="false">
+    <ion-nav-title>
+        <span>Watch</span>
+    </ion-nav-title>
+    <ion-content>
+        <div class="row">
+            <div class="col span-16x9">
+                <div class="video-container main">
+                    <iframe class="vz-player" ng-src="{{trustSrc(watchUrl)}}" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="not-found" ng-if="!video && !loading">
+            <h4><i class="fa fa-frown-o"></i> No Videos Found</h4>
+        </div>
+        <div class="not-found" ng-if="loading">
+            <h4><i class="fa fa-circle-o-notch fa-spin"></i> Loading</h4>
+        </div>
+        <div class="video watch list card" ng-if="video && !loading">
+            <div class="item item-body">
+                <div class="item-footer">
+                    <div class="row">
+                        <div class="col col-80 item-meta">
+                            <h4>{{video.title}}</h4>
+                        </div>
+                        <div class="col col-20 item-views">{{video.views|viewer}}<br />views</div>
+                    </div>
+                </div>
+                <p>{{video.description}}</p>
+            </div>
+        </div>
+        <div class="item item-body">
+            <span class="item-star">
+                   <div ng-repeat="i in [1,2,3,4,5]">
+                       <i class="fa fa-star" ng-class="{'active':i<=video.stars}"></i>
+                   </div>
+            </span>
+        </div>
+        <div class="button-bar share-bar" ng-if="video && !loading">
+            <button class="button button-outline button-assertive icon ion-videocamera" ng-click="toggleTab('vidcomment')"></button>
+            <button class="button button-outline button-assertive icon ion-ios-chatbubble-outline" ng-click="toggleTab('comment')"></button>
+            <button class="button button-outline button-assertive icon ion-android-share-alt" ng-click="toggleTab('share')"></button>
+            <a class="button button-outline button-assertive icon ion-ios-email-outline" href="mailto:?subject={{video.title|encode}}&body={{video.title|encode}} {{config.sharing+watchUrl}}" target="_blank"></a>
+            <button class="button button-outline button-assertive icon" ng-class="{'ion-ios-heart':video.social.Like==1,'ion-ios-heart-outline':video.social.Like!=1}" ng-click="toggleLike(video)"></button>
+            <button class="button button-outline button-assertive icon" ng-class="{'ion-ios-plus':video.social.Later==1,'ion-ios-plus-outline':video.social.Later!=1}" ng-click="toggleLater(video)"></button>
+        </div>
+        <div ng-show="tab=='share'">
+            <div class="row">
+                <div class="col">
+                    <h3>Share<h3>
+
+                    <button ng-if="me.Facebook" class="social facebook button button-block" ng-click="postOnFacebook(video,config.sharing+watchUrl)"><i class="icon ion-social-facebook"></i> Post on Facebook</button>
+                    <button ng-if="!me.Facebook" class="social facebook button button-block" ng-click="authExternalProvider('Facebook')"><i class="icon ion-social-facebook"></i> Connect Facebook</button>
+
+                    <button ng-if="me.Twitter" class="social twitter  button button-block" ng-click="postOnTwitter(video,config.sharing+watchUrl)"><i class="icon ion-social-twitter"></i> Post on Twitter</button>
+                    <button ng-if="!me.Twitter" class="social twitter  button button-block" ng-click="authExternalProvider('Twitter')"><i class="icon ion-social-twitter"></i> Connect Twitter</button>
+                </div>
+            </div>
+            <div ng-if="error" class="page alert danger">{{error}}</div>
+        </div>
+        <div ng-show="tab=='vidcomment'">
+            <div class="row">
+                <div class="col">
+                    <h3>Video Threads<h3>
+                </div>
+            </div>
+            <div class="normal list entry-item">
+                <form name="comment_form" class="" novalidate ng-cloak>
+                    <div class="row">
+                        <div class="col col-20 picture-box2">
+                            <pre-img ratio="_1_1" helper-class="rounded-image">
+                                <img class="user-image" ng-src="{{me.Picture | gravtaar:me.Email:40:'mm'}}" spinner-on-load>
+                            </pre-img>
+                        </div>
+                        <div class="col col-70">
+                             <ng-upload-form ng-model="files"
+                                            template-url="/views/upload/record.html"
+                                            url="{{me.encoder}}"
+                                            storage="{{me.Storage}}"
+                                            container="{{me.container}}"
+                                            server-mode="{{config.mode}}"
+                                            on-uploaded="receiveEncoding(file)"
+                                            on-programme="programmeCreated(programme)"
+                                            user="{{me.ID}}"
+                                            accept-file-types="video">
+                            </ng-upload-form>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="comments" ng-show="tab=='comment'">
+            <div class="row">
+                <div class="col">
+                    <h3>Comments . {{comments.Count}}<h3>
+                </div>
+            </div>
+            <div class="normal list entry-item">
+                <form name="comment_form" class="" novalidate ng-cloak>
+                    <div class="row">
+                        <div class="col col-20 picture-box2">
+                            <pre-img ratio="_1_1" helper-class="rounded-image">
+                                <img class="user-image" ng-src="{{me.Picture | gravtaar:me.Email:40:'mm'}}" spinner-on-load>
+                            </pre-img>
+                        </div>
+                        <div class="col col-80">
+                            <div class="list">
+                                <label class="item item-input item-floating-label">
+                                    <input type="text" ng-model="comment.message" required maxlength="259" placeholder="Add a public comment">
+                                </label>
+                            </div>
+                            <button class="button button-small button-block button-assertive" ng-click="addComment(comment)">Post</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div ng-show="tab=='vidcomment' || tab=='comment'">
+            <div class="list comment entry-item" ng-show="encoding">
+                <div class="entry-heading item item-text-wrap">
+                    <div class="row">
+                        <div class="col col-20 picture-box2">
+                             <pre-img ratio="_1_1" helper-class="rounded-image">
+                                <img class="user-image" ng-src="{{me.Picture | gravtaar:me.Email:40:'mm'}}" spinner-on-load>
+                            </pre-img>
+                        </div>
+                        <div class="col col-80">
+                            <h4>Me</h4>
+                            <p class="entry-excerpt">
+                               <i class="fa fa-circle-o-notch fa-spin"></i> Prepairing Video
+                            </p>
+                            <small>Just Now<small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-repeat="c in comments.Items" class="list comment entry-item">
+                <div class="entry-heading item item-text-wrap">
+                    <div class="row">
+                        <div class="col col-20 picture-box2">
+                             <pre-img ratio="_1_1" helper-class="rounded-image">
+                                <img class="user-image" ng-src="{{c.Sender.Picture | gravtaar:c.Sender.Email:40:'mm'}}" spinner-on-load>
+                            </pre-img>
+                        </div>
+                        <div class="col col-80">
+                            <h4>{{c.Sender.Name}}</h4>
+                            <div class="entry-excerpt" ng-if="!c.RichContentId">
+                                {{c.Message}}
+                            </div>
+                            <div class="entry-excerpt" ng-if="c.RichContentId">
+                                <iframe class="vz-player" ng-src="{{trustSrc('/rich/'+c.RichContentId)}}" height="164px" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                            <small>{{c.Created | fromNow}}<small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

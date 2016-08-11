@@ -1,0 +1,45 @@
+<ion-side-menus enable-menu-with-back-views="true" ng-controller="AppCtrl">
+    <ion-side-menu-content class="post-size-14px">
+        <ion-nav-bar class="bar app-top-white-bar">
+            <ion-nav-back-button></ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <a class="button button-icon button-clear" ng-click="showSearchBar()"><i class="icon icon-search"></i></a>
+                <a class="button button-icon button-clear" ui-sref="app.profileEdit"><i class="icon icon-profile"></i></a>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" class="main-menu" expose-aside-when="large">
+        <ion-content>
+            <ion-list>
+                <ion-item class="heading-item item item-avatar" nav-clear menu-close ui-sref="app.profileEdit" back-img="me.Extra.banner">
+                    <div class="row">
+                        <div class="col">
+                            <div class="user-image-container">
+                                <pre-img ratio="_1_1" helper-class="rounded-image">
+                                    <img class="user-image" ng-src="{{me.Picture | gravtaar:me.Email:90:'mm'}}" spinner-on-load>
+                                </pre-img>
+                            </div>
+                        </div>
+                        <div class="col margin-top-15">
+                            <h2 class="greeting">{{me.FirstName}} {{me.Surname}}</h2>
+                            <p class="message">{{me.Email}}</p>
+                            <p class="message">{{me.Birthday | moment:'MMMM d'}}</p>
+                        </div>
+                    </div>
+                </ion-item>
+                <ion-item class="item-icon-left" ng-repeat="n in config.navs" nav-clear menu-close ui-sref="{{n.route}}">
+                    <i class="{{n.icon}}"></i>
+                    <h2 class="menu-text">{{n.text}}</h2>
+                </ion-item>
+                <ion-item class="item-icon-left" nav-clear menu-close ui-sref="auth.logout">
+                    <i class="icon ion-log-out"></i>
+                    <h2 class="menu-text">Sign Out</h2>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

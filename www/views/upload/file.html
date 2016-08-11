@@ -1,0 +1,55 @@
+<div id="dropzone" data-file-upload="options" class="fileupload dropzone dz-clickable">
+    <input type="file" name="files[]" multiple accept="{{options.acceptFileTypes}}"><!-- directory webkitdirectory mozdirectory-->
+    <div class="dz-message">
+        <button class="button button-block button-large button-assertive icon-left ion-upload">Choose Files</button>
+    </div>
+</div>
+<div class="entries-list">
+    <div class="progress active" ng-if="overall.progress>0 && overall.progress<100" style="clear: both" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar" ng-style="{width:(overall.progress)+'%'}"></div>
+    </div>
+    <div ng-repeat="file in queue" class="list card entry-item">
+        <div class="entry-heading item item-text-wrap">
+            <div class="row">
+                <div class="col col-80">
+                    <h2 class="entry-title"><span ng-if="file.progress==100"><i class="fa fa-check small-font fa-success"></i></span> {{file.originalname || file.name}}
+                    </h2>
+                    <p class="entry-author">
+                        {{file.size | filesize}}
+                    </p>
+                </div>
+                <div class="col col-20 text-right small-font">
+                    <span ng-if="file.progress<100 && file.progress>=0">{{ file.progress | number:2 }}%</span>
+                    <span ng-if="!file.progress"><i class="fa fa-circle-o-notch fa-spin"></i>  Connecting</span>
+                </div>
+            </div>
+            <progress ng-if="file.progress<100 && file.progress>=0" id="progressbar" max="100" value="{{file.progress}}"></progress>
+        </div>
+        <div class="entry-content item item-text-wrap">
+            <p class="entry-excerpt" ng-if="file.programme">
+                <label class="item item-input">
+                    <input type="text" ng-model="file.meta.title" required maxlength="144" placeholder="Video Title">
+                </label>
+                <label class="item item-input">
+                    <input type="text" ng-model="file.meta.description" maxlength="255" placeholder="Description">
+                </label>
+                <label class="item item-input item-select">
+                    <span class="input-label">Category</span>
+                    <select ng-model="file.meta.category" ng-options="c.id as c.title for c in categories"></select>
+                </label>
+            </p>
+            <div class="entry-actions row">
+                <div class="actions col col-center col-66">
+                    <p class="entry-excerpt">
+                        {{file.error || file.status || file.msg}}
+                    </p>
+                </div>
+                <div class="read-more col col-center col-33" ng-if="file.programme">
+                    <button class="button button-small button-block button-assertive" ng-click="onMetaUpdate({file:file})">
+                        {{file.saving?'Updating':'Update'}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<ion-view class="walkthrough-view login-view auth-view" cache-view="false">
+    <ion-content>
+        <div class="row top-content">
+            <div class="col">
+                <div class="row">
+                    <div class="col text-center">
+                        <img ng-src="{{config.logoWhite}}" class="homelogo">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <form name="signup_form" class="" novalidate ng-cloak>
+                            <div class="list">
+                                <label class="item item-input">
+                                    <input id="inputboxs" type="email" placeholder="Enter Your Email" name="user_email" ng-model="user.email" required>
+                                </label>
+                                <label class="item item-input" show-hide-container>
+                                    <input id="inputboxs" type="password" placeholder="Password" name="user_password" ng-model="user.password" required show-hide-input>
+                                </label>
+                                <label class="item item-input" show-hide-container>
+                                    <input type="password" id="inputboxs" placeholder="Confrim Password" name="user_password" ng-model="user.confirmPassword" required show-hide-input>
+                                </label>
+                            </div>
+                            <button type="submit" class="login button button-block" ng-click="doSignup(user)">Register</button>
+                        </form>
+                        <ul class="ul-unstyled" ng-if="errors">
+                            <li class="alert danger" ng-repeat="err in errors">{{err}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col text-center">
+                    <h3 class="or">Or Register With</h3>
+                </div>
+                <div class="button-bar social-login">
+                    <a class="facebook button button-block" ng-click="authExternalProvider('Facebook')"><i class="icon ion-social-facebook"></i></a>
+                    <a class="twitter  button button-block" ng-click="authExternalProvider('Twitter')"><i class="icon ion-social-twitter"></i></a>
+                    <a class="google   button button-block" ng-click="authExternalProvider('Google')"><i class="icon ion-social-googleplus"></i></a>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="alternative-actions">
+                            <a class="forgot-password button button-small button-clear button-light" ui-sref="auth.login">
+                                Back to Login
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row terms bottom-content">
+            <div class="col text-center">
+                <p style="text-align: center ">By clicking on Register your confirm that you have read and accepted <a ui-sref="auth.terms">Terms & Conditions</a></p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

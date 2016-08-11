@@ -1,0 +1,12 @@
+<ion-view class="category-feeds-view">
+    <ion-nav-title>
+        <span>{{title}}</span>
+    </ion-nav-title>
+    <ion-content>
+        <div class="row" ng-repeat="row in records">
+            <div class="col" ng-repeat="c in row">
+                <a ui-sref="app.home.playlist.items({id:c.ID})"><img class="full-image" ng-src="{{c.Image}}"></a>
+            </div> 
+        </div>
+    </ion-content>
+</ion-view>

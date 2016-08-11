@@ -1,0 +1,21 @@
+﻿<ion-view class="terms-view auth-outer" cache-view="false">
+    <ion-nav-title>
+        <span>About {{config.title}}</span>
+    </ion-nav-title>
+    <ion-content>
+        <div class="row top-content">
+            <div class="col">
+                <div class="row">
+                    <div class="col text-center">
+                        <img ng-src="{{config.logoWhite}}" class="homelogo">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col terms">
+                        <p ng-bind-html="config.about"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

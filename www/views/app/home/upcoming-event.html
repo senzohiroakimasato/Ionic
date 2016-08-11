@@ -1,0 +1,19 @@
+<ion-view class="category-feeds-view" id="soon">
+    <ion-content>
+    <div class="video watch list card" ng-if="video && !loading">
+        <div class="item item-body">
+            <div class="item-footer">
+                <div class="row">
+                    <div class="col col-80 item-meta">
+                        <p style="color:red">{{video.time}}</p>
+                    </div>
+                    <div class="col col-80 item-meta">
+                        <h4 style="color:black">{{video.title}}</h4>
+                    </div>
+                </div>
+            </div>
+            <p style="color:red">{{video.pin}}</p>
+        </div>
+    </div>
+    </ion-content>
+</ion-view>

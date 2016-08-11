@@ -1,0 +1,232 @@
+﻿{
+  "lat-mobile.vzconsole.com": {
+    "custom": {
+      "age": "not specified"
+    },
+    "id": 30161,
+    "playlists": [ 40043, 40044, 40045, 40046, 40051 ],
+    "featured":40043,
+    "categories": [{"id":12156,"title":"Cooking"},{"id":12168,"title":"Default"},{"id":12169,"title":"Default"},{"id":12158,"title":"Family"},{"id":12157,"title":"Life Choices"},{"id":12159,"title":"Mindset"},{"id":12155,"title":"Wellness"}],
+    "countryId": 164,
+    "languageId": 45,
+    "maxLogin":2,
+    "serviceBase": "https://dev-lat.vzconsole.com/",
+    "sharing":"https://lat-mobile.vzconsole.com/",
+    "mode": "dev",
+    "css": "app-lat",
+    "logoWhite": "img/lat-white.png",
+    "logoGray": "img/lat-gray.png",
+    "extra": true,
+    "logo": "img/lat.png",
+    "title": "Latinarrific",
+    "about": "Latinarrific is a brand being developed and licensed into multiple platforms, including merchandising and media.<br/>Initially Latinarrific will be positioned as a 360° marketing solution to assist CMO’s in solving the problem of how to effectively reach the US Hispanic market via Latinas and their families.<br/>The majority of CMO’s today simply buy ads on Hispanic television channels and cannot relate those ads to what is happening in the store.<br/>The Latinarrific marketing and merchandising platform is the Shopper-Marketer solution for the Hispanic Market.<br/>Latinarrific helps the American Latina solve her problems through educational, inspirational and aspirational video programming and through product education coupons, and samplings.<br/>Latinarrific helps the CMO spend money more cost effectively to engage with their Latina market and increase sales at store level.",
+    "terms": "Latinarrific is a brand being developed and licensed into multiple platforms, including merchandising and media.<br/>Initially Latinarrific will be positioned as a 360° marketing solution to assist CMO’s in solving the problem of how to effectively reach the US Hispanic market via Latinas and their families.<br/>The majority of CMO’s today simply buy ads on Hispanic television channels and cannot relate those ads to what is happening in the store.<br/>The Latinarrific marketing and merchandising platform is the Shopper-Marketer solution for the Hispanic Market.<br/>Latinarrific helps the American Latina solve her problems through educational, inspirational and aspirational video programming and through product education coupons, and samplings.<br/>Latinarrific helps the CMO spend money more cost effectively to engage with their Latina market and increase sales at store level.",
+    "shop": "/shop-lat.html",
+    "navs": [
+      {
+        "route": "app.home.playlist.categories",
+        "text": "Watch",
+        "icon": "icon ion-eye"
+      },
+      {
+        "route": "app.home.upload",
+        "text": "Upload",
+        "icon": "icon ion-upload"
+      },
+      {
+        "route": "app.shop",
+        "text": "Shop",
+        "icon": "icon ion-bag"
+      },
+      {
+        "route": "app.events",
+        "text": "Events",
+        "icon": "icon ion-calendar"
+      },
+      {
+        "route": "app.profileEdit",
+        "text": "Profile",
+        "icon": "icon ion-person"
+      },
+      {
+        "route": "app.about",
+        "text": "About",
+        "icon": "icon ion-information-circled"
+      }
+    ]
+  },
+  "lfc-mobile.vzconsole.com": {
+    "custom": {
+      "age": "not specified"
+    },
+    "id": 30163,
+    "countryId": 164,
+    "languageId": 45,
+    "maxLogin":2,
+    "mode": "dev",
+    "css": "app-lfc",
+    "logoWhite": "img/lfc-white.png",
+    "logoGray": "img/lfc-gray.png",
+    "extra": true,
+    "logo": "img/lfc.png",
+    "serviceBase": "https://dev.vzconsole.com/",
+    "sharing":"https://lfc-mobile.vzconsole.com/",
+    "playlists": [ 40042, 40047, 40048, 40049 ],
+    "featured":40042,
+    "categories": [{"id":12160,"title":"Default"},{"id":12166,"title":"Fans"},{"id":12167,"title":"Highlights"},{"id":12164,"title":"Latest"},{"id":12165,"title":"News"}],
+    "navs": [
+      {
+        "route": "app.profileEdit",
+        "text": "Profile",
+        "icon": "icon ion-person"
+      },
+      {
+        "route": "app.friends",
+        "text": "Friends",
+        "icon": "icon ion-person-stalker"
+      },
+      {
+        "route": "app.notifications",
+        "text": "Notifications",
+        "icon": "icon ion-android-notifications"
+      },
+      {
+        "route": "app.history",
+        "text": "History",
+        "icon": "icon ion-ios-timer"
+      },
+      {
+        "route": "app.videos",
+        "text": "My Videos",
+        "icon": "icon ion-ios-videocam"
+      },
+      {
+        "route": "app.home.upload",
+        "text": "Upload",
+        "icon": "icon ion-upload"
+      },
+      {
+        "route": "app.events",
+        "text": "Upcoming Events",
+        "icon": "icon ion-calendar"
+      },
+      {
+        "route": "app.home.terms",
+        "text": "Terms & Conditions",
+        "icon": "icon ion-information-circled"
+      }
+    ]
+  },
+  "lat-vzta.vzconsole.com":{
+    "custom": {
+      "age": "not specified"
+    },
+    "id": 30161,
+    "playlists": [ 40043, 40044, 40045, 40046, 40051 ],
+    "featured" : 40043,
+    "categories": [{"id":12156,"title":"Cooking"},{"id":12168,"title":"Default"},{"id":12169,"title":"Default"},{"id":12158,"title":"Family"},{"id":12157,"title":"Life Choices"},{"id":12159,"title":"Mindset"},{"id":12155,"title":"Wellness"}],
+    "countryId": 164,
+    "languageId": 45,
+    "maxLogin":2,
+    "serviceBase": "https://dev-lat.vzconsole.com/",
+    "sharing":"https://lat-vzta.vzconsole.com/",
+    "mode": "dev",
+     "css": "app-lat",
+    "logoWhite": "img/lat-white.png",
+    "logoGray": "img/lat-gray.png",
+    "extra": true,
+    "logo": "img/lat.png",
+    "title": "Latinarrific",
+    "about": "Latinarrific is a brand being developed and licensed into multiple platforms, including merchandising and media.<br/>Initially Latinarrific will be positioned as a 360° marketing solution to assist CMO’s in solving the problem of how to effectively reach the US Hispanic market via Latinas and their families.<br/>The majority of CMO’s today simply buy ads on Hispanic television channels and cannot relate those ads to what is happening in the store.<br/>The Latinarrific marketing and merchandising platform is the Shopper-Marketer solution for the Hispanic Market.<br/>Latinarrific helps the American Latina solve her problems through educational, inspirational and aspirational video programming and through product education coupons, and samplings.<br/>Latinarrific helps the CMO spend money more cost effectively to engage with their Latina market and increase sales at store level.",
+    "terms": "Latinarrific is a brand being developed and licensed into multiple platforms, including merchandising and media.<br/>Initially Latinarrific will be positioned as a 360° marketing solution to assist CMO’s in solving the problem of how to effectively reach the US Hispanic market via Latinas and their families.<br/>The majority of CMO’s today simply buy ads on Hispanic television channels and cannot relate those ads to what is happening in the store.<br/>The Latinarrific marketing and merchandising platform is the Shopper-Marketer solution for the Hispanic Market.<br/>Latinarrific helps the American Latina solve her problems through educational, inspirational and aspirational video programming and through product education coupons, and samplings.<br/>Latinarrific helps the CMO spend money more cost effectively to engage with their Latina market and increase sales at store level.",
+    "shop": "/shop-lat.html",
+    "navs": [
+      {
+        "route": "app.home.playlist.categories",
+        "text": "Watch",
+        "icon": "icon ion-eye"
+      },
+      {
+        "route": "app.home.upload",
+        "text": "Upload",
+        "icon": "icon ion-upload"
+      },
+      {
+        "route": "app.shop",
+        "text": "Shop",
+        "icon": "icon ion-bag"
+      },
+      {
+        "route": "app.events",
+        "text": "Events",
+        "icon": "icon ion-calendar"
+      },
+      {
+        "route": "app.profileEdit",
+        "text": "Profile",
+        "icon": "icon ion-person"
+      },
+      {
+        "route": "app.about",
+        "text": "About",
+        "icon": "icon ion-information-circled"
+      }
+    ]
+  },
+  "vzta-mobile.vzconsole.com": {
+    "custom": {
+      "age": "not specified"
+    },
+    "id": 5,
+    "playlists": [ 10085, 10084, 91 ],
+    "featured":10085,
+    "categories": [{"id":364,"title":"Default"}],
+    "mode": "vzta",
+    "countryId": 164,
+    "languageId": 45,
+    "maxLogin":2,
+    "serviceBase": "https://vzta.vzconsole.com/",
+    "sharing":"https://vzta-mobile.vzconsole.com/",
+    "css": "app-lat",
+    "logoWhite": "img/lat-white.png",
+    "logoGray": "img/lat-gray.png",
+    "extra": true,
+    "logo": "img/lat.png",
+    "title": "Latinarrific",
+    "about": "Latinarrific is a brand being developed and licensed into multiple platforms, including merchandising and media.<br/>Initially Latinarrific will be positioned as a 360° marketing solution to assist CMO’s in solving the problem of how to effectively reach the US Hispanic market via Latinas and their families.<br/>The majority of CMO’s today simply buy ads on Hispanic television channels and cannot relate those ads to what is happening in the store.<br/>The Latinarrific marketing and merchandising platform is the Shopper-Marketer solution for the Hispanic Market.<br/>Latinarrific helps the American Latina solve her problems through educational, inspirational and aspirational video programming and through product education coupons, and samplings.<br/>Latinarrific helps the CMO spend money more cost effectively to engage with their Latina market and increase sales at store level.",
+    "terms": "Latinarrific is a brand being developed and licensed into multiple platforms, including merchandising and media.<br/>Initially Latinarrific will be positioned as a 360° marketing solution to assist CMO’s in solving the problem of how to effectively reach the US Hispanic market via Latinas and their families.<br/>The majority of CMO’s today simply buy ads on Hispanic television channels and cannot relate those ads to what is happening in the store.<br/>The Latinarrific marketing and merchandising platform is the Shopper-Marketer solution for the Hispanic Market.<br/>Latinarrific helps the American Latina solve her problems through educational, inspirational and aspirational video programming and through product education coupons, and samplings.<br/>Latinarrific helps the CMO spend money more cost effectively to engage with their Latina market and increase sales at store level.",
+    "shop": "/shop-lat.html",
+    "navs": [
+      {
+        "route": "app.home.playlist.categories",
+        "text": "Watch",
+        "icon": "icon ion-eye"
+      },
+      {
+        "route": "app.home.upload",
+        "text": "Upload",
+        "icon": "icon ion-upload"
+      },
+      {
+        "route": "app.shop",
+        "text": "Shop",
+        "icon": "icon ion-bag"
+      },
+      {
+        "route": "app.events",
+        "text": "Events",
+        "icon": "icon ion-calendar"
+      },
+      {
+        "route": "app.profileEdit",
+        "text": "Profile",
+        "icon": "icon ion-person"
+      },
+      {
+        "route": "app.about",
+        "text": "About",
+        "icon": "icon ion-information-circled"
+      }
+    ]
+  }
+}

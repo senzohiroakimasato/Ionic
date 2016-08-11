@@ -1,0 +1,72 @@
+﻿<ion-view class="settings-view-advance auth-outer" cache-view="false">
+    <ion-nav-title>
+        <span>Your Account</span>
+    </ion-nav-title>
+    <ion-content>
+        <div class="col text-center" style="margin-top: 40px">
+            <h2 style="color:white">Register Your Account</h2>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form name="signup_form" class="" novalidate ng-cloak>
+                    <div class="row">
+                        <div class="col">
+                            <div class="list">
+
+                                <label class="item item-input ">
+                                    <span class="input-label">First Name</span>
+                                    <input type="text" ng-model="record.FirstName" required maxlength="100" placeholder="First Name">
+                                </label>
+                                <label class="item item-input">
+                                    <span class="input-label">Last Name</span>
+                                    <input type="text" ng-model="record.Surname" required maxlength="100" placeholder="Last Name">
+                                </label>
+                                <label class="item item-input">
+                                    <span class="input-label">Birthday</span>
+                                    <input type="date" ng-model="record.Birthday" required placeholder="Date of Birth">
+                                </label>
+                                <label class="item item-input item-select">
+                                    <span class="input-label">Gender</span>
+                                    <select ng-model="record.Extra.gender">
+                                        <option value="female">Female</option>
+                                        <option value="male">Male</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </label>
+
+                                <label class="item item-input">
+                                    <span class="input-label">Choose Name</span>
+                                    <input type="text" ng-model="record.UserName" required maxlength="255" ng-blur="changeUsername(record.UserName)" placeholder="Choose Username">
+                                    <i ng-if="!checkingUserName" class="icon placeholder-icon" ng-class="{'ion-checkmark-circled':validUserName,'ion-close-circled':!validUserName}"></i>
+                                    <ion-spinner ng-if="checkingUserName"></ion-spinner>
+                                </label>
+                                <label class="item item-input">
+                                    <span class="input-label">Zipcode</span>
+                                    <input type="text" ng-model="record.Postcode" required maxlength="10" placeholder="Zipcode">
+                                </label>
+
+                            </div>
+                            <ul class="ul-unstyled" ng-if="errors">
+                                <li class="alert danger" ng-repeat="err in errors">{{err}}</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div style="text-align: center">
+                        <label for="" class="border">Preferred Language</label>
+                    </div>
+                    <ul class="language">
+                        <li ng-click="selectLanguage(45)"><a lang="en" ng-class="{active:record.LanguageID==45}">English</a></li>
+                        <li ng-click="selectLanguage(46)"><a lang="es" ng-class="{active:record.LanguageID==46}">Español</a></li>
+                    </ul>
+                    <div style="margin-top: 60px"></div>
+                    <div class="alert danger">
+                        {{error.error_description || error}}
+                    </div>
+                    <button type="submit" class="login button button-block" ng-click="saveProfile(record,config.extra)">{{saving?'Saving':'Save Account'}}</button>
+                </form>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,22 @@
+<ion-view class="settings-view">
+    <ion-nav-title>
+        <span>Upload</span>
+    </ion-nav-title>
+    <ion-content>
+        <div class="row">
+            <div class="col col-center">
+                <ng-upload-form ng-model="files"
+                                url="{{me.encoder}}"
+                                storage="{{me.Storage}}"
+                                container="{{me.container}}"
+                                server-mode="{{config.mode}}"
+                                categories="config.categories"
+                                resume-upload="true"
+                                on-meta-update="updateMeta(file)"
+                                user="{{me.ID}}" size="275" accept-file-types="video"
+                                max-chunk-size="10" multiple="true">
+                </ng-upload-form>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
